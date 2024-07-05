@@ -15,13 +15,8 @@
     <link href="assets/css/bootstrap.min.css" rel="stylesheet">
     <link href="assets/css/style.css" rel="stylesheet">
     <link href="assets/css/responsive.css" rel="stylesheet">
-    <style>
-        /* Set the size of the map */
-        #map {
-            height: 400px;
-            width: 100%;
-        }
-    </style>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+
 </head>
 
 <body>
@@ -213,51 +208,6 @@
             </div>
         </section>
 
-        <section>
-            <div class="row d-flex contact-info mb-5">
-                <div class="col-md-6 col-lg-3 d-flex ftco-animate fadeInUp ftco-animated">
-                    <div class="align-self-stretch box p-4 text-center">
-                        <div class="icon d-flex align-items-center justify-content-center">
-                            <span class="icon-map-signs"></span>
-                        </div>
-                        <h3 class="mb-4">Address</h3>
-                        <p>Suterville, San Jose Gusu, <br> Zamboanga City, Zamboanga Del Sur, 7000</p>
-                    </div>
-                </div>
-
-                
-                <div class="col-md-6 col-lg-3 d-flex ftco-animate fadeInUp ftco-animated">
-                    <div class="align-self-stretch box p-4 text-center">
-                        <div class="icon d-flex align-items-center justify-content-center">
-                            <span class="icon-phone2"></span>
-                        </div>
-                        <h3 class="mb-4">Contact Number</h3>
-                        <p><a href="tel://1234567920">+63 935 903 2013</a></p>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-3 d-flex ftco-animate fadeInUp ftco-animated">
-                    <div class="align-self-stretch box p-4 text-center">
-                        <div class="icon d-flex align-items-center justify-content-center">
-                            <span class="icon-paper-plane"></span>
-                        </div>
-                        <h3 class="mb-4">Email Address</h3>
-                        <p>
-                            <a href="mailto:info@yoursite.com">chylle.garcia07@gmail.com</a>
-                        </p>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-3 d-flex ftco-animate fadeInUp ftco-animated">
-                    <div class="align-self-stretch box p-4 text-center">
-                        <div class="icon d-flex align-items-center justify-content-center">
-                            <span class="icon-globe"></span>
-                        </div>
-                        <h3 class="mb-4">Web Portfolio</h3>
-                        <p><a href="#">tbh</a></p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
         <section id="contact" class="site-section section-form text-center">
             <div class="container">
                 <h3>Contact</h3>
@@ -274,7 +224,7 @@
                             <textarea name="message" id="mesaage" class="form-control" placeholder="Message" required></textarea>
                         </div>
                     </div>
-                    <button href="#" class="btn btn-border" type="submit">Message Me <span class="glyphicon glyphicon-send"></span></button>
+                    <button href="mailto:chylle.garcia07@gmail.com" class="btn btn-border" type="submit">Message Me <span class="glyphicon glyphicon-send"></span></button>
                 </form>
             </div>
         </section><!-- /.section-form -->
@@ -283,66 +233,85 @@
 
 
 
-    <footer>
-        <h3>My Location</h3>
-        <!-- The div element for the map -->
-        <div id="map"></div>
-    
-        <script>
-            // Initialize and add the map
-            function initMap() {
-                // The location
-                const location = { lat: -25.344, lng: 131.036 };
-                // The map, centered at the location
-                const map = new google.maps.Map(document.getElementById("map"), {
-                    zoom: 4,
-                    center: location,
-                });
-                // The marker, positioned at the location
-                const marker = new google.maps.Marker({
-                    position: location,
-                    map: map,
-                });
-            }
-        </script>
-        <!-- Load the Google Maps API -->
-        <script async defer
-        src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap">
-        </script>
-    
-        <!-- Existing structure -->
-        <div class="row d-flex contact-info mb-5">
-            <div class="col-md-6 col-lg-3 d-flex ftco-animate fadeInUp ftco-animated">
-                <div class="align-self-stretch box p-4 text-center">
-                    <div class="icon d-flex align-items-center justify-content-center">
-                        <span class="icon-map-signs"></span>
-                    </div>
-                    <h3 class="mb-4">Address</h3>
-                    <p>Suterville, San Jose Gusu, <br> Zamboanga City, Zamboanga Del Sur, 7000</p>
-                </div>
+ <!-- Footer -->
+<footer class="bg-dark text-white pt-4">
+    <div class="container">
+        <div class="row">
+            <!-- Social Media Links -->
+            <div class="social col-md-6 mb-4">
+                <h5 class="text-uppercase">Follow Me</h5>
+                <ul class="list-unstyled d-flex justify-content-center justify-content-md-start">
+                    <li class="mr-3">
+                        <a href="https://www.facebook.com/chylledonovhan.c.garcia" target="_blank" class="text-white">
+                            <i class="fab fa-facebook-f"></i> Chylle Cuajotor Garcia
+                        </a>
+                    </li>
+                    <li class="mr-3">
+                        <a href="https://www.instagram.com/chylleesauce07/" target="_blank" class="text-white">
+                            <i class="fab fa-instagram"></i> chylleesauce07
+                        </a>
+                    </li>
+                    <li class="mr-3">
+                        <a href="www.linkedin.com/in/chylle-donovhan-garcia" target="_blank" class="text-white">
+                            <i class="fab fa-linkedin-in"></i>    Chylle Donovhan Garcia
+                        </a>
+                    </li>
+                    <li class="mr-3">
+                        <a href="https://github.com/garciachylle07" target="_blank" class="text-white">
+                            <i class="fab fa-github"></i> garciachylle07
+                        </a>
+                    </li>
+                    <li class="mr-3">
+                        <a href="mailto:chylle.garcia07@gmail.com" target="_blank" class="text-white">
+                            <i class="fas fa-envelope"></i> Chylle Donovhan Cuajotor Garcia
+                        </a>
+                    </li>
+                </ul>
             </div>
-            <div class="col-md-6 col-lg-9 d-flex ftco-animate fadeInUp ftco-animated">
-                <div class="align-self-stretch box p-4 text-center">
-                    <!-- The div element for the map -->
-                    <div id="map"></div>
-                </div>
+            <!-- Map -->
+            <div class="col-md-6 mb-4">
+                <h5 class="text-uppercase text-center text-md-left">My Location</h5>
+                <div id="map-footer" style="height: 200px;"></div>
             </div>
         </div>
+    </div>
+    <div class="text-center py-3">
+        <br><br>
+        &copy; 2024 Copyright. All rights reserved.
+        <br><br>
+    </div>
+</footer>
 
+<!-- Leaflet.js for the map -->
+<link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
 
-			<div class="row">
-				<div class="col-md-12 text-center">
-					<p>
-						Copyright &copy;
-						<script>
-							document.write(new Date().getFullYear());
-						</script>
-						All rights reserved
-					</p>
-				</div>
-			</div>
-		</div>
-	</footer>
+<!-- Font Awesome for icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+<script>
+    // Initialize and add the map for the footer
+    function initFooterMap() {
+        // The location
+        const location = [6.91672, 122.04448]; // Coordinates for Zamboanga City
+        // The map, centered at the location
+        const map = L.map('map-footer').setView(location, 19);
+
+        // Adding the OpenStreetMap tiles
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        }).addTo(map);
+
+        // Adding a marker at the location
+        L.marker(location).addTo(map)
+            .bindPopup('Suterville, San Jose Gusu,<br> Zamboanga City, Zamboanga Del Sur, 7000')
+            .openPopup();
+    }
+
+    // Call the function to initialize the map
+    initFooterMap();
+</script>
+
 
 
     <!-- Modals -->
